@@ -7,7 +7,6 @@ C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\bin\Debug\net5
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\bin\Debug\net5.0-windows\TrucoConTruco.dll
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\bin\Debug\net5.0-windows\TrucoConTruco.pdb
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5.0-windows\UI.csproj.AssemblyReference.cache
-C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5.0-windows\UI.FrmPartidaUno.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5.0-windows\UI.FrmSalaPrincipal.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5.0-windows\UI.csproj.GenerateResource.cache
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5.0-windows\UI.GeneratedMSBuildEditorConfig.editorconfig
@@ -20,3 +19,4 @@ C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5.0-windows\UI.pdb
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5.0-windows\UI.genruntimeconfig.cache
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5.0-windows\ref\UI.dll
+C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\UI\obj\Debug\net5.0-windows\UI.FrmPartida.resources

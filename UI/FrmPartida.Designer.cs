@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class FrmPartidaUno
+    partial class FrmPartida
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.rtbJugada = new System.Windows.Forms.RichTextBox();
-            this.btn_iniciarPartida = new System.Windows.Forms.Button();
+            this.btnOcultar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbJugada
@@ -41,26 +42,36 @@
             this.rtbJugada.TabIndex = 2;
             this.rtbJugada.Text = "";
             // 
-            // btn_iniciarPartida
+            // btnOcultar
             // 
-            this.btn_iniciarPartida.Location = new System.Drawing.Point(121, 552);
-            this.btn_iniciarPartida.Name = "btn_iniciarPartida";
-            this.btn_iniciarPartida.Size = new System.Drawing.Size(138, 23);
-            this.btn_iniciarPartida.TabIndex = 3;
-            this.btn_iniciarPartida.Text = "Iniciar Partida";
-            this.btn_iniciarPartida.UseVisualStyleBackColor = true;
-            this.btn_iniciarPartida.Click += new System.EventHandler(this.btn_iniciarPartida_Click);
+            this.btnOcultar.Location = new System.Drawing.Point(22, 558);
+            this.btnOcultar.Name = "btnOcultar";
+            this.btnOcultar.Size = new System.Drawing.Size(104, 23);
+            this.btnOcultar.TabIndex = 3;
+            this.btnOcultar.Text = "button1";
+            this.btnOcultar.UseVisualStyleBackColor = true;
             // 
-            // FrmPartidaUno
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(287, 558);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(104, 23);
+            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Text = "Finalizar Partida";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // FrmPartida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 584);
-            this.Controls.Add(this.btn_iniciarPartida);
+            this.ClientSize = new System.Drawing.Size(423, 593);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnOcultar);
             this.Controls.Add(this.rtbJugada);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmPartidaUno";
+            this.Name = "FrmPartida";
             this.Text = "Sala de Truco";
             this.Load += new System.EventHandler(this.FrmPartidaUno_Load);
             this.ResumeLayout(false);
@@ -70,6 +81,7 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox rtbJugada;
-        private System.Windows.Forms.Button btn_iniciarPartida;
+        private System.Windows.Forms.Button btnOcultar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

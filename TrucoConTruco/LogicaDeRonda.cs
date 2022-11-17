@@ -5,7 +5,6 @@ using System.Threading;
 
 namespace TrucoConTruco
 {
-    public delegate string Mensaje();
 
     public class LogicaDeRonda
     {
@@ -16,7 +15,7 @@ namespace TrucoConTruco
         Jugador jugadorPie;
         int numeroDeRonda;
         int resultadoInicial;
-        Action<string> mensajesRonda;
+        public Action<string> mensajesRonda;
         Mazo mazo;
         bool seCantoTruco;
         bool envidoAceptado;
@@ -44,26 +43,29 @@ namespace TrucoConTruco
 
         public void Jugar()
         {
-            mensajesRonda.Invoke($"\n----COMIENZO DE LA RONDA N° {numeroDeRonda}------\n");
+            this.mensajesRonda?.Invoke("Jugando Partida");
+
+
+            mensajesRonda?.Invoke($"\n----COMIENZO DE LA RONDA N° {numeroDeRonda}------\n");
 
             try
             {
                 RepartirCartas();
                 MostrarCartasDeCadaJugador();
                 this.JugarJugada(1);
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
                 this.JugarJugada(2);
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
                 this.JugarJugada(3);
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
             }
             catch (ExcepcionFinDeRonda ex)
             {
-                mensajesRonda.Invoke($"\nPuntaje del jugador N° 1: {jugadorUno.puntaje}\n");
-                mensajesRonda.Invoke($"\nPuntaje del jugador N° 2: {jugadorDos.puntaje}\n");
-                mensajesRonda.Invoke($"\n----FIN DE LA RONDA------\n");
-                mensajesRonda.Invoke(ex.Message);
+                mensajesRonda?.Invoke($"\nPuntaje del jugador N° 1: {jugadorUno.puntaje}\n");
+                mensajesRonda?.Invoke($"\nPuntaje del jugador N° 2: {jugadorDos.puntaje}\n");
+                mensajesRonda?.Invoke($"\n----FIN DE LA RONDA------\n");
+                mensajesRonda?.Invoke(ex.Message);
             }
 
         }
@@ -74,15 +76,15 @@ namespace TrucoConTruco
             {
                 jugadorMano = jugadorUno;
                 jugadorPie = jugadorDos;
-                mensajesRonda.Invoke($"\nEl jugador 1° es Mano\n");
-                mensajesRonda.Invoke($"El jugador 2° es Pie\n");
+                mensajesRonda?.Invoke($"\nEl jugador 1° es Mano\n");
+                mensajesRonda?.Invoke($"El jugador 2° es Pie\n");
             }
             else
             {
                 jugadorMano = jugadorDos;
                 jugadorPie = jugadorUno;
-                mensajesRonda.Invoke($"\nEl jugador 1° es Pie\n");
-                mensajesRonda.Invoke($"El jugador 2° es Mano\n");
+                mensajesRonda?.Invoke($"\nEl jugador 1° es Pie\n");
+                mensajesRonda?.Invoke($"El jugador 2° es Mano\n");
             }
             jugadorMano.manoOPie = "Mano";
             jugadorPie.manoOPie = "Pie";
@@ -93,25 +95,25 @@ namespace TrucoConTruco
 
         private void MostrarCartasDeCadaJugador()
         {
-            Thread.Sleep(3000);
-            mensajesRonda.Invoke($"\nCartas jugador Mano: \n");
+            Thread.Sleep(1500);
+            mensajesRonda?.Invoke($"\nCartas jugador Mano: \n");
             foreach (var item in jugadorMano.mano)
             {
-                mensajesRonda.Invoke($"{item.valor} {item.palo}\n");
+                mensajesRonda?.Invoke($"{item.valor} {item.palo}\n");
             }
-            Thread.Sleep(3000);
-            mensajesRonda.Invoke($"\nCartas jugador Pie: \n");
+            Thread.Sleep(1500);
+            mensajesRonda?.Invoke($"\nCartas jugador Pie: \n");
 
             foreach (var item in jugadorPie.mano)
             {
-                mensajesRonda.Invoke($"{item.valor} {item.palo}\n");
+                mensajesRonda?.Invoke($"{item.valor} {item.palo}\n");
             }
-            Thread.Sleep(3000);
+            Thread.Sleep(1500);
 
-            mensajesRonda.Invoke($"\nTantos jugador Mano: {TantosJugadorMano}: \n");
-            Thread.Sleep(3000);
+            mensajesRonda?.Invoke($"\nTantos jugador Mano: {TantosJugadorMano}: \n");
+            Thread.Sleep(1500);
 
-            mensajesRonda.Invoke($"\nTantos jugador Pie: {TantosJugadorPie}: \n");
+            mensajesRonda?.Invoke($"\nTantos jugador Pie: {TantosJugadorPie}: \n");
         }
 
         public void JugarJugada(int numeroDeJugada)
@@ -122,23 +124,23 @@ namespace TrucoConTruco
                 {
                     jugadorGanador = jugadorMano;
                     jugadorPerdedor = jugadorPie;
-                    Thread.Sleep(3000);
+                    Thread.Sleep(1500);
 
                     if (jugadorGanador.JugarEnvido())
                     {
-                        Thread.Sleep(3000);
+                        Thread.Sleep(1500);
 
-                        mensajesRonda($" canto el jugador {jugadorGanador.manoOPie}\n");
+                        mensajesRonda?.Invoke($" canto el jugador {jugadorGanador.manoOPie}\n");
                         if (jugadorPerdedor.AceptarTrucoOEnvido())
                         {
-                            Thread.Sleep(3000);
+                            Thread.Sleep(1500);
 
-                            mensajesRonda($" canto el jugador {jugadorPerdedor.manoOPie}\n");
+                            mensajesRonda?.Invoke($" canto el jugador {jugadorPerdedor.manoOPie}\n");
                             ResolverResultadoDeEnvido(jugadorGanador, jugadorPerdedor);
                         }
                         else
                         {
-                            Thread.Sleep(3000);
+                            Thread.Sleep(1500);
 
                             SumarPuntosJugada(jugadorGanador, 1);
                         }
@@ -146,13 +148,13 @@ namespace TrucoConTruco
                 }
                 if (seCantoTruco == false)
                 {
-                    Thread.Sleep(3000);
+                    Thread.Sleep(1500);
 
                     JugadaDeTruco(jugadorGanador, jugadorPerdedor);
 
                     if (seCantoTruco == false)
                     {
-                        Thread.Sleep(3000);
+                        Thread.Sleep(1500);
 
                         JugadaDeTruco(jugadorPerdedor, jugadorGanador);
                     }
@@ -160,23 +162,23 @@ namespace TrucoConTruco
                     resultadoInicial = ValidarGanadorDeJugada(jugadorGanador, jugadorPerdedor, numeroDeJugada);
                     if (resultadoInicial == 2)
                     {
-                        Thread.Sleep(3000);
+                        Thread.Sleep(1500);
 
                         jugadorAux = jugadorGanador;
                         jugadorPerdedor = jugadorGanador;
                         jugadorGanador = jugadorAux;
                     }
                 }
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
                 verificarFinDePartida(jugadorUno, jugadorDos);
             }
 
             catch (Exception ex)
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
-                mensajesRonda.Invoke(ex.Message);
+                mensajesRonda?.Invoke(ex.Message);
             }
         }
 
@@ -219,41 +221,41 @@ namespace TrucoConTruco
         {
             if (jugadorUno.JugarTruco())
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
-                mensajesRonda($" canto el jugador {jugadorUno.manoOPie}");
+                mensajesRonda?.Invoke($" canto el jugador {jugadorUno.manoOPie}");
                 seCantoTruco = true;
 
                 if (jugadorDos.AceptarTrucoOEnvido())
                 {
-                    Thread.Sleep(3000);
+                    Thread.Sleep(1500);
 
-                    mensajesRonda($" canto el jugador {jugadorDos.manoOPie}");
-                    Thread.Sleep(3000);
+                    mensajesRonda?.Invoke($" canto el jugador {jugadorDos.manoOPie}");
+                    Thread.Sleep(1500);
 
-                    mensajesRonda.Invoke($"\nEl jugador {jugadorUno.manoOPie} juega: ");
+                    mensajesRonda?.Invoke($"\nEl jugador {jugadorUno.manoOPie} juega: ");
                     jugadorUno.ultimaCartaJugada = jugadorUno.JugarCarta();
-                    Thread.Sleep(3000);
+                    Thread.Sleep(1500);
 
-                    mensajesRonda.Invoke($"\nEl jugador {jugadorDos.manoOPie} juega: ");
+                    mensajesRonda?.Invoke($"\nEl jugador {jugadorDos.manoOPie} juega: ");
                     jugadorDos.ultimaCartaJugada = jugadorDos.JugarCarta();
                 }
                 else
                 {
-                    Thread.Sleep(3000);
+                    Thread.Sleep(1500);
 
-                    mensajesRonda($" canto el jugador {jugadorDos.manoOPie}");
+                    mensajesRonda?.Invoke($" canto el jugador {jugadorDos.manoOPie}");
                     SumarPuntosJugada(jugadorUno, 1);
-                    Thread.Sleep(3000);
+                    Thread.Sleep(1500);
 
                     throw new Exception($"\nEl jugador {jugadorDos.manoOPie} pierde la ronda\n");
                 }
             }
             else
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
-                mensajesRonda.Invoke($"\nEl jugador {jugadorUno.manoOPie} juega: ");
+                mensajesRonda?.Invoke($"\nEl jugador {jugadorUno.manoOPie} juega: ");
                 jugadorUno.ultimaCartaJugada = jugadorUno.JugarCarta();
             }
         }
@@ -262,18 +264,18 @@ namespace TrucoConTruco
         {
             int tantosGanador = CalcularTantos(ganador.mano);
             int tantosPerdedor = CalcularTantos(perdedor.mano);
-            Thread.Sleep(3000);
+            Thread.Sleep(1500);
 
             if (tantosGanador >= tantosPerdedor)
             {
-                mensajesRonda.Invoke($"\nGana el envido el jugador {jugadorGanador.manoOPie}\n");
+                mensajesRonda?.Invoke($"\nGana el envido el jugador {jugadorGanador.manoOPie}\n");
                 SumarPuntosJugada(jugadorGanador, 2);
             }
             else
             {
-                mensajesRonda.Invoke($"\nGana el envido el jugador {jugadorPerdedor.manoOPie}\n");
+                mensajesRonda?.Invoke($"\nGana el envido el jugador {jugadorPerdedor.manoOPie}\n");
                 SumarPuntosJugada(jugadorPerdedor, 2);
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
             }
         }
@@ -283,17 +285,17 @@ namespace TrucoConTruco
 
             if (jugadorUno.ultimaCartaJugada.poderDeCarta < jugadorDos.ultimaCartaJugada.poderDeCarta)
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
-                mensajesRonda.Invoke($"\nGana la jugada N° {numeroDeJugada} jugador : {jugadorUno.manoOPie}\n");
+                mensajesRonda?.Invoke($"\nGana la jugada N° {numeroDeJugada} jugador : {jugadorUno.manoOPie}\n");
                 jugadorUno.jugadasGanas += 1;
                 return 1;
             }
             else
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
-                mensajesRonda.Invoke($"\nGana la jugada N° {numeroDeJugada} jugador : {jugadorDos.manoOPie}\n");
+                mensajesRonda?.Invoke($"\nGana la jugada N° {numeroDeJugada} jugador : {jugadorDos.manoOPie}\n");
                 jugadorDos.jugadasGanas += 1;
                 return jugadorUno.ultimaCartaJugada.poderDeCarta > jugadorDos.ultimaCartaJugada.poderDeCarta ? 2 : 0;
             }
@@ -305,7 +307,7 @@ namespace TrucoConTruco
         {
             if (envidoAceptado == false)
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
                 return;
             }
@@ -314,15 +316,15 @@ namespace TrucoConTruco
 
             if (tantosJ1 == tantosJ2 || tantosJ1 > tantosJ2)
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
-                mensajesRonda($"\nGana envido el jugador {jugadorUno.manoOPie}\n");
+                mensajesRonda?.Invoke($"\nGana envido el jugador {jugadorUno.manoOPie}\n");
             }
             else
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
 
-                mensajesRonda($"\nGana envido el jugador {jugadorDos.manoOPie}\n");
+                mensajesRonda?.Invoke($"\nGana envido el jugador {jugadorDos.manoOPie}\n");
             }
 
         }

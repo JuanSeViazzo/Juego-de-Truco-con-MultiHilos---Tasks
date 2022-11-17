@@ -9,7 +9,7 @@ using TrucoConTruco;
 
 namespace TrucoConTruco
 {
-    public class XmlSerializadora<T> where T : class, new()
+    public class XmlSerializadora<T> where T : class, new() 
     {
 
         static string ruta;

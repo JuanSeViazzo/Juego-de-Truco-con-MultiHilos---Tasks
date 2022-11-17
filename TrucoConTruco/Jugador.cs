@@ -123,7 +123,7 @@ namespace TrucoConTruco
                 throw new Exception("No hay mas cartas");
             }
 
-            MensajeJugador.Invoke($" {carta.valor}, {carta.palo}\n");
+            MensajeJugador?.Invoke($" {carta.valor}, {carta.palo}\n");
 
             mano.Remove(mano[orden]);
             return carta;
@@ -135,7 +135,7 @@ namespace TrucoConTruco
         {
             if (Probabilidad() > 70)
             {
-                MensajeJugador.Invoke(CantarTruco());
+                MensajeJugador?.Invoke(CantarTruco());
                 return true;
             }
 
@@ -146,7 +146,7 @@ namespace TrucoConTruco
         {
             if (Probabilidad() > 80)
             {
-                MensajeJugador.Invoke(CantarEnvido());
+                MensajeJugador?.Invoke(CantarEnvido());
                 return true;
             }
             return false;
@@ -155,12 +155,12 @@ namespace TrucoConTruco
         {
             if (Probabilidad() > 50)
             {
-                MensajeJugador.Invoke(Aceptar());
+                MensajeJugador?.Invoke(Aceptar());
                 return true;
             }
             else
             {
-                MensajeJugador.Invoke(NoQuiero());
+                MensajeJugador?.Invoke(NoQuiero());
                 return false;
             }
         }

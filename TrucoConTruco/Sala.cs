@@ -1,44 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using System.Threading;
 namespace TrucoConTruco
 {
     public class Sala
     {
-        List<Partida> partidasActuales;
         public string nombreDeLaSala;
-        static int limiteDePartidas;
-        //Action<string> partidasEnJuego;
-        Action<string> mensajesRonda;
+        public Action<string> mensajesRonda;
         Mazo mazo;
-
-
+        public Partida partida;
+        private static int contadorSala=0;
+        public int numeroDeSala;
+        public CancellationTokenSource ctsAja;
 
 
         static Sala()
         {
-            limiteDePartidas = 20;
+            contadorSala=0;
         }
 
-        public Sala(string nombreDeLaSala, Mazo mazo, Action<string> mensajesRonda)
+        public Sala(string nombreDeLaSala, Mazo mazo, CancellationTokenSource cts)
         {
             this.nombreDeLaSala = nombreDeLaSala;
             this.mazo = mazo;
-            this.mensajesRonda = mensajesRonda;
+            numeroDeSala += contadorSala++;
+            this.ctsAja = cts;
         }
 
-        public void CrearPartida()
+        public void CrearPartida(Jugador jugadorUno, Jugador jugadorDos)
         {
             
-            Jugador jugadorUno = new Jugador(new Usuario());
-            Jugador jugadorDos = new Jugador(new Usuario());
+          
             jugadorUno.MensajeJugador += mensajesRonda;
             jugadorDos.MensajeJugador += mensajesRonda;
+            mensajesRonda?.Invoke($"Numero de Sala: {numeroDeSala}");
 
-            Partida partida = new Partida(jugadorUno, jugadorDos, mazo, /*partidasEnJuego*/mensajesRonda);
-            Task jugar = new Task(partida.Jugar);
-            jugar.Start();
+            partida = new Partida(jugadorUno, jugadorDos, mazo, mensajesRonda);
+            //Task jugar = new Task(partida.Jugar,cts.Token);
+            //jugar.Start();
+            Task tarea1 = Task.Run(() => partida.Jugar(ctsAja.Token));
+
+            jugadorUno.usuario.historialDePartidas.Add(partida);
+            jugadorDos.usuario.historialDePartidas.Add(partida);
+            jugadorUno.usuario.historialDePuntos += jugadorUno.puntaje;
 
         }
 
