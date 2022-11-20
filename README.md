@@ -140,6 +140,19 @@ LA IDEA ES IMPLEMENTAR ALGUNA MODIFICACION DEL MAZO PARA JUSTIFICAR EL GUARDADO,
 
 
 
+## BASE DE DATOS DONDE ESTA?
+
+![image](https://user-images.githubusercontent.com/86853488/202922731-72d77fc9-f714-4ebd-a996-fdb9b3f1d6a3.png)
+
+![image](https://user-images.githubusercontent.com/86853488/202922739-7a8dcb48-6c9b-49ae-8bc5-202c20c3a486.png)
+![image](https://user-images.githubusercontent.com/86853488/202922748-da0e4a82-3847-41d0-9adf-c2413c6c59cf.png)
+
+
+
+
+
+
+
 GRACIAS POR TODO. QUE DISFRUTEN LA EXPERIENCIA.
 
 
