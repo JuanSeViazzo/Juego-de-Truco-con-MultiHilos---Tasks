@@ -204,7 +204,7 @@ namespace TrucoConTruco
             }
         }
 
-        private void VerificarFinDePartida(Jugador jugadorUno, Jugador jugadorDos)
+        public void VerificarFinDePartida(Jugador jugadorUno, Jugador jugadorDos)
         {
             if (jugadorUno.jugadasGanas >= 1)
             {

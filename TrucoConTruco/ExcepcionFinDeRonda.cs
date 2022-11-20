@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrucoConTruco
 {
-    internal class ExcepcionFinDeRonda : Exception
+    public class ExcepcionFinDeRonda : Exception
     {
 
         public ExcepcionFinDeRonda(string mensaje) : base(mensaje)

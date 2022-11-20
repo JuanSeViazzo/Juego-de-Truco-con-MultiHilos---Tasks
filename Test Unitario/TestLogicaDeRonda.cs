@@ -50,6 +50,21 @@ namespace Test_Unitario
 
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionFinDeRonda))]
+        public void VerificarQueLaPartidaTerminoYDevuelveExcepcionPersonalizada()
+        {
+            Jugador jugador1 = new Jugador("JugadorUno", true);
+            Jugador jugador2 = new Jugador("JugadorDos", true);
+            LogicaDeRonda logicaDeRonda = new LogicaDeRonda();
+            jugador1.jugadasGanas = 3;
+            
+            logicaDeRonda.VerificarFinDePartida(jugador1, jugador2);
+
+
+
+
+        }
 
 
     }
