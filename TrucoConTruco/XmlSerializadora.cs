@@ -9,28 +9,27 @@ using TrucoConTruco;
 
 namespace TrucoConTruco
 {
-    public class XmlSerializadora<T> where T : class, new() 
+    public class XmlSerializadora<T> : ISerializar<T>  where T : class, new() 
     {
 
         static string ruta;
 
         static XmlSerializadora()
         {
-            ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);//Conseguir la ruta desde cualquier PC
+            ruta = AppDomain.CurrentDomain.BaseDirectory;//Conseguir la ruta desde cualquier PC
             ruta += @"/Archivos-Serializacion"; //Crea una carpeta 
         }
 
 
-        public static void EscribirArchivoXML(T objeto)
+        public void EscribirSerializadora(T objeto)
         {
-            //asi se va a nombrar el archivo
-            string rutaCompleta = ruta + @"/Serializacion_" + DateTime.Now.ToString("HH-mm-ss") + ".xml";
+            string rutaCompleta = ruta + @"/Serializacion_" + DateTime.Now.ToString("dddd-MM-yyyy") + ".xml";
 
             try
             {
-                if (!Directory.Exists(ruta)) // validar si la carpeta existe
+                if (!Directory.Exists(ruta)) 
                 {
-                    Directory.CreateDirectory(ruta); //aca creo la carpeta, (no el archivo)
+                    Directory.CreateDirectory(ruta); 
                 }
 
 
@@ -39,8 +38,6 @@ namespace TrucoConTruco
                     XmlSerializer serializer = new XmlSerializer(typeof(T));
                     serializer.Serialize(escribirSerializacion, objeto);    
                 }
-
-
 
             }
             catch (Exception)
@@ -52,11 +49,10 @@ namespace TrucoConTruco
 
         }
 
-        public static T LeerArchivoXML(string rutaPasada)
+        public T LeerSerializadora(string rutaPasada)
         {
             string rutaCompleta = rutaPasada;
 
-            Mazo objecto = null;
 
             try
             {

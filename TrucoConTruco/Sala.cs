@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Threading;
 namespace TrucoConTruco
 {
     public class Sala
@@ -10,40 +8,57 @@ namespace TrucoConTruco
         public Action<string> mensajesRonda;
         Mazo mazo;
         public Partida partida;
-        private static int contadorSala=0;
-        public int numeroDeSala;
-        public CancellationTokenSource ctsAja;
 
+        
 
-        static Sala()
-        {
-            contadorSala=0;
-        }
-
-        public Sala(string nombreDeLaSala, Mazo mazo, CancellationTokenSource cts)
+        public Sala(string nombreDeLaSala, Mazo mazo)
         {
             this.nombreDeLaSala = nombreDeLaSala;
             this.mazo = mazo;
-            numeroDeSala += contadorSala++;
-            this.ctsAja = cts;
         }
 
-        public void CrearPartida(Jugador jugadorUno, Jugador jugadorDos)
+        public void MostrarPorPantalla(string texto)
         {
+            mensajesRonda?.Invoke(texto);
+        }
+
+
+        public async void CrearPartida(Jugador jugadorUno, Jugador jugadorDos)
+        {
+
+            jugadorUno.estaJugando = true;
+            jugadorDos.estaJugando = true;  
+            jugadorUno.MensajeJugador += MostrarPorPantalla;
+            jugadorDos.MensajeJugador += MostrarPorPantalla;
+
+            partida = new Partida(jugadorUno, jugadorDos, mazo, MostrarPorPantalla,nombreDeLaSala);
+        
+            Task tarea1 = Task.Run(() => partida.Jugar());
             
-          
-            jugadorUno.MensajeJugador += mensajesRonda;
-            jugadorDos.MensajeJugador += mensajesRonda;
-            mensajesRonda?.Invoke($"Numero de Sala: {numeroDeSala}");
+            await tarea1.ConfigureAwait(true);
 
-            partida = new Partida(jugadorUno, jugadorDos, mazo, mensajesRonda);
-            //Task jugar = new Task(partida.Jugar,cts.Token);
-            //jugar.Start();
-            Task tarea1 = Task.Run(() => partida.Jugar(ctsAja.Token));
+            if (jugadorUno.puntaje > jugadorDos.puntaje)
+            {
+                partida.idJugadorGanador = jugadorUno.idJugador;
+                partida.idJugadorPerdedor = jugadorDos.idJugador;
+            }
+            else
+            {
+                if (jugadorUno.puntaje < jugadorDos.puntaje)
+                {
+                    partida.idJugadorGanador = jugadorDos.idJugador;
+                    partida.idJugadorPerdedor = jugadorUno.idJugador;
+                }
+            
+            }
 
-            jugadorUno.usuario.historialDePartidas.Add(partida);
-            jugadorDos.usuario.historialDePartidas.Add(partida);
-            jugadorUno.usuario.historialDePuntos += jugadorUno.puntaje;
+
+            if (tarea1.IsCompleted)
+            {
+                jugadorUno.estaJugando = false;
+                jugadorDos.estaJugando = false;
+                ConexionABaseDeDatos.GuardarPartidas(partida);
+            }
 
         }
 

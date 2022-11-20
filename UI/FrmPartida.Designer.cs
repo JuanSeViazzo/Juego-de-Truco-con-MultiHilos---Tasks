@@ -35,6 +35,7 @@
             // 
             // rtbJugada
             // 
+            this.rtbJugada.BackColor = System.Drawing.Color.FloralWhite;
             this.rtbJugada.Location = new System.Drawing.Point(22, 12);
             this.rtbJugada.Name = "rtbJugada";
             this.rtbJugada.ReadOnly = true;
@@ -44,27 +45,31 @@
             // 
             // btnOcultar
             // 
+            this.btnOcultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnOcultar.Location = new System.Drawing.Point(22, 558);
             this.btnOcultar.Name = "btnOcultar";
             this.btnOcultar.Size = new System.Drawing.Size(104, 23);
             this.btnOcultar.TabIndex = 3;
-            this.btnOcultar.Text = "button1";
-            this.btnOcultar.UseVisualStyleBackColor = true;
+            this.btnOcultar.Text = "Cerrar";
+            this.btnOcultar.UseVisualStyleBackColor = false;
+            this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnCancelar.Location = new System.Drawing.Point(287, 558);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(104, 23);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Finalizar Partida";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmPartida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(423, 593);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnOcultar);
@@ -72,6 +77,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmPartida";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sala de Truco";
             this.Load += new System.EventHandler(this.FrmPartidaUno_Load);
             this.ResumeLayout(false);

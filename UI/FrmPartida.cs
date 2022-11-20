@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 using TrucoConTruco;
 
@@ -20,8 +21,9 @@ namespace UI
 
         private void FrmPartidaUno_Load(object sender, EventArgs e)
         {
-            sala.partida.logicaDeRonda.mensajesRonda += MostrarRondaPorRonda;
-
+          
+            sala.mensajesRonda += MostrarRondaPorRonda;
+            
         }
       
 
@@ -31,7 +33,7 @@ namespace UI
             {
                 this.rtbJugada.BeginInvoke((MethodInvoker)delegate ()
                 {
-                    rtbJugada.AppendText(texto);
+                    rtbJugada.AppendText(texto); 
                 });
 
             }
@@ -39,8 +41,15 @@ namespace UI
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.sala.ctsAja.Cancel();
+
+            this.sala.partida.cts.Cancel();
+            MostrarRondaPorRonda("Partida finalizada");
             MessageBox.Show("Partida finalizada");
+        }
+
+        private void btnOcultar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -1,11 +1,11 @@
-C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\bin\Debug\net5.0\TrucoConTruco.deps.json
-C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\bin\Debug\net5.0\TrucoConTruco.dll
-C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\bin\Debug\net5.0\TrucoConTruco.pdb
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\obj\Debug\net5.0\TrucoConTruco.csproj.AssemblyReference.cache
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\obj\Debug\net5.0\TrucoConTruco.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\obj\Debug\net5.0\TrucoConTruco.AssemblyInfoInputs.cache
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\obj\Debug\net5.0\TrucoConTruco.AssemblyInfo.cs
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\obj\Debug\net5.0\TrucoConTruco.csproj.CoreCompileInputs.cache
+C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\bin\Debug\net5.0\TrucoConTruco.deps.json
+C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\bin\Debug\net5.0\TrucoConTruco.dll
+C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\bin\Debug\net5.0\TrucoConTruco.pdb
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\obj\Debug\net5.0\TrucoConTruco.dll
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\obj\Debug\net5.0\refint\TrucoConTruco.dll
 C:\Users\juans\source\JuanSViazzo2DLabo2-TPTruco\TrucoConTruco\TrucoConTruco\obj\Debug\net5.0\TrucoConTruco.pdb

@@ -7,8 +7,8 @@ namespace TrucoConTruco
     public class Jugador
     {
         public event Action<string> MensajeJugador;
-
-        public Usuario usuario;
+        public int idJugador;
+        public string nombreDeUsuario;
         public int puntaje;
         public bool repartidor;
         public bool esMano;
@@ -16,11 +16,28 @@ namespace TrucoConTruco
         public string manoOPie;
         public Carta ultimaCartaJugada;
         public int jugadasGanas;
+        public bool estaJugando;
+        public int edad;
+        public string cartaPreferida;
 
 
-        public Jugador(Usuario usuario)
+        public Jugador(string nombreDeUsuario, bool estaJugando)
         {
-            this.usuario = usuario;
+            this.nombreDeUsuario = nombreDeUsuario;
+            this.estaJugando = estaJugando;
+
+        }
+
+        public Jugador(string nombreDeUsuario, string cartaPreferida, int edad)
+        {
+            this.nombreDeUsuario = nombreDeUsuario;
+            this.cartaPreferida = cartaPreferida;
+            this.edad = edad;
+        }
+        public Jugador(string nombreDeUsuario, int idJugador,string cartaPreferida, int edad ) 
+            : this(nombreDeUsuario,cartaPreferida,edad)
+        {
+            this.idJugador=idJugador;
 
         }
 
@@ -167,7 +184,10 @@ namespace TrucoConTruco
 
 
 
-
+        public override string ToString()
+        {
+            return nombreDeUsuario;
+        }
 
 
 
