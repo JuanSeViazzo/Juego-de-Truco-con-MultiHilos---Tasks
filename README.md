@@ -23,8 +23,7 @@ _Aca usted podra visualizar la ventana, en la cual donde podra ir a cada una de 
 
 
 ## Crear Nueva Sala - Primero debera cargar un mazo, despues podra iniciar la partida  💸
-
-![image](https://user-images.githubusercontent.com/86853488/193590597-c9fe2582-8f2a-4152-b436-25bab5ab8cba.png)
+![image](https://user-images.githubusercontent.com/86853488/202913909-0225ab8d-8abe-4df0-917c-788711091fd0.png)
 
 ### Nuevas caracteristicas en la proxima version
 -Mejor interfaz
