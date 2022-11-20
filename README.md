@@ -78,129 +78,65 @@ _En esta pantalla ud podra visualizar las estadisticas de las partidas, donde po
 
 **Justificacion Tecnica**
 
-### 1- NameSpace, solucion, proyecto, bibliotecas de clase.
-![image](https://user-images.githubusercontent.com/86853488/193668370-fedc9aa4-ac9a-46b3-9915-eb82297fdd66.png)
-![image](https://user-images.githubusercontent.com/86853488/193668418-cc133cc1-4dfb-4e58-8cd1-777341296665.png)
+### 1- SQL - QUERY INNER JOIN - COUNT - GROUP BY - SUM => (HERMOSA)
+![image](https://user-images.githubusercontent.com/86853488/202914208-fbd8ee65-976f-4182-9747-a0efd9749333.png)
+![image](https://user-images.githubusercontent.com/86853488/202914251-39983c41-07a2-4b16-a7d0-a75dbce0f801.png)
+![image](https://user-images.githubusercontent.com/86853488/202914315-0e1a019a-800b-46f3-af42-a5268190ea8b.png)
+-EN ESTA TABLA ULTIMA, PROBABLEMENTE EL NUEVO ID A PARTIR DE HOY SERA 26, YA QUE HUBO PRUEBAS.
+![image](https://user-images.githubusercontent.com/86853488/202915618-d93e7ea6-cc06-451b-9b5c-01c20da30f17.png)
+-CLASE CONEXION A BASE DE DATOS
 
-### 234- Sobrecarga de metodos
-![image](https://user-images.githubusercontent.com/86853488/193668755-4025c1e1-3bbe-4996-b991-ac1fa11ab6ee.png)
+### 2 - MANEJO DE EXCEPCIONES
+![image](https://user-images.githubusercontent.com/86853488/202915646-9116bb42-7010-4d98-97dd-908fec315d23.png)
+![image](https://user-images.githubusercontent.com/86853488/202915659-1cee2613-d7c6-44f2-912a-6e581fa14414.png)
+![image](https://user-images.githubusercontent.com/86853488/202915665-63f03224-75d5-45b1-8eec-46fe9f7de13d.png)
+![image](https://user-images.githubusercontent.com/86853488/202915672-91cbc225-9915-4720-8686-ac087d828e4b.png)
+-EXCEPCIONES PERSONALIZADAS, MANEJO DE EXCEPCIONES EN BD.
 
-### 234- POO
-![image](https://user-images.githubusercontent.com/86853488/193668811-2e02962d-56ce-4c99-ac23-6981610deb2c.png)
+### 3 UNIT TESTING
+![image](https://user-images.githubusercontent.com/86853488/202916697-34da4ae6-753e-4b5b-96fa-b55cc0a1894c.png)
+![image](https://user-images.githubusercontent.com/86853488/202916736-7b72d38a-1d0a-4b35-8542-1530e0c918a8.png)
 
-- Objetos - Vuelos - Pasajeros - Equipaje - Cliente - Usuario - Persona
-- Decidi realizar la clase pasajero que no tenga relacion de herencia con Cliente : Persona.
-
-
-
-## 234 - Sobrecarga de Constructores
-
-- Elegi la sobrecarga de constructores en mas de un formulario, y en estos de MDI
-- En los ctor de Pasajero, el 1ero corresponde al metodo de harcodeo, el 2do corresponde a dar de alta a los pasajeros.-
-
-![image](https://user-images.githubusercontent.com/86853488/193670249-26fe8ec3-ec3a-44c3-a4b8-06924823bc83.png)
-![image](https://user-images.githubusercontent.com/86853488/193671232-7bcde511-41f2-497a-898d-2b2d3bcb000b.png)
-
-
-## 234 - Propiedades, ESTADO es una propiedad en base a un atributo, pero Asientos disponibles es solamente una propiedad.-
-
-![image](https://user-images.githubusercontent.com/86853488/193670967-99c995fe-2804-4fe4-bee1-5cf091fcbf47.png)
-
-## 234 Enumerados, Modificadores de acceso
-
-- los atributos van privados y las propiedades son publicas, entiendo que mas adelante con base de datos para generar un archivo debere tener todo atributo publico
-
-![image](https://user-images.githubusercontent.com/86853488/193672200-f905419d-45a8-4579-baef-76859eb084c5.png)
-
-## 234 Clases estaticas
-
-- Decidi crear cuatro clases estaticas, Facturacion, Gestion de Aerolinea Estadisticas y Validaciones.
-
-**Facturacion aca voy a realizar los metodos contables, descuento, facturacion, etc**
-![image](https://user-images.githubusercontent.com/86853488/193672969-2548f9c6-f20c-4d17-bec2-626035fef971.png)
-
-**Gestion de Aerolinea, se encarga de manejar toda la informacion, listas de pasajeros, pasajes, vuelos, aviones, personas, y diccionario de destinos**
-![image](https://user-images.githubusercontent.com/86853488/193673542-d2b3853e-e278-401c-a2c1-6751f3d498af.png)
-
-**Estadisticas: En esta clase me encargo de realizar todas las validaciones sobre datos estadisticos y el uso indiscriminado, demente de diccionarios**
-![image](https://user-images.githubusercontent.com/86853488/193674134-7a0d3eeb-be0f-4596-8abf-ce12034ceaf0.png)
-
-**Validaciones: En esta clase me encargo de validar los datos, usando Excepciones
-![image](https://user-images.githubusercontent.com/86853488/193674620-09b910f1-0c90-424d-80db-402bc795af37.png)
-
-**Valido contraseña que al menos tenga un caracter no alfanumerico**
-![image](https://user-images.githubusercontent.com/86853488/193674676-0743462f-d02f-4680-b51a-d2f5a4c3287f.png)
-
-## 6 Colecciones 
-**Uso de Listas, y Diccionarios, Los diccionarios los aproveche al tener un valor unico e irrepetible como la KEY, por lo cual para las estadisticas era muy conveniente para sacar por destinos, y el diccionario de destinos, la Key es un numero del 1 al 15 para nacionales y del 1000 en adelante para internacionales, lo cual da una flexibilidad para agregar mas destinos y para entender que hasta cierto valor son nacionales, las listas son de PASAJERO PASAJE VUELO AVION PERSONA, la de Persona incluye USUARIO y CLIENTE por el principio SOLID**
-
-![image](https://user-images.githubusercontent.com/86853488/193676271-d7a187b4-beab-4562-a7be-ad2cf19672b2.png)
-![image](https://user-images.githubusercontent.com/86853488/193676860-68c2d8b2-39d6-4a0e-993f-bbd285ca3f44.png)
-![image](https://user-images.githubusercontent.com/86853488/193676916-3ab8dd01-0166-44f2-b833-1959bbae0629.png)
-
-
-### 7 - DRY - ENCAPSULAMIENTO - ENUMERADOS
-
-![image](https://user-images.githubusercontent.com/86853488/193669316-f5e65045-8070-4e35-9752-d8f8bb9102ec.png)
-![image](https://user-images.githubusercontent.com/86853488/193669349-7a71fc13-e0a2-4783-918e-4f312b43c04f.png)
-![image](https://user-images.githubusercontent.com/86853488/193669791-ec453135-8506-4da9-acaf-cee45bc65ef0.png)
-
-- Se puede ver el encapsulamiento de metodos y el proceso de no repetir codigo, otra opcion hubiese sido pasar por parametro una condicion y segun esa condicion iterar una u otra lista, o ambas en el mismo scope, tambien hago uso de Enumerados.-
-
-
-### 8 - Herencia - Sealed una clase que no voy quiero que sea heredada. 
-![image](https://user-images.githubusercontent.com/86853488/193669082-ffccb20d-31b3-48ff-b38e-9ed7387dca0a.png)
-
-### 9 - Herencia - Abstract Persona es una clase que si participa de Herencia pero que no quiero que se realice una instancia de la misma.-
-![image](https://user-images.githubusercontent.com/86853488/193677112-18ca3dbe-c1f7-4cec-ba4e-7454daadeaca.png)
-
-### 9 - POLIMORFISMO - Hubiera sido sencillo usar el METODO MOSTRAR()
-**Dentro de la clase pasaje decidi realizar 3 metodos abstractos (probablemente cobrar pasaje sera virtual en la version BETA 1.1)
-**En las clases derivadas realizo un override, y cada una realiza en su escope un metodo distinto, en descuento es segun los viajes realizados, pero segun la categoria seran menos o mas viajes necesarios para un mejor descuento.
-
-![image](https://user-images.githubusercontent.com/86853488/193678107-2be648bb-1960-4ef2-9d55-fcb66b5608b2.png)
-![image](https://user-images.githubusercontent.com/86853488/193678379-56fef8cc-445b-4158-a763-8c8ccb1dd386.png)
-![image](https://user-images.githubusercontent.com/86853488/193678425-0d4112e1-9081-4797-986c-333e9c4ce2fa.png)
-
-
-### 10 Estructura Try Catch - Excepciones
-**Aplique excepciones para validar los datos ingresados y mostrarselo en la interface al usuario, por Herencia, cuando instancio un cliente y hago :base() para llamar a Persona, puedo recibir las excepciones de Persona, y las atrapo en la vista, dentro del FRMCARGAR CLIENTE.
-
-![image](https://user-images.githubusercontent.com/86853488/193677331-69477918-7a6c-42d9-adec-50765c7f5698.png)
-![image](https://user-images.githubusercontent.com/86853488/193677558-e37e4ad3-cd1f-4c7b-af92-a0c94a6524b2.png)
+-Los test de jugador estan rompiendo por la serializacion, pero funciona correctamente, es mas la ruta que paso en ambos casos es la correcta.
+-Los test de logica estan correctos, me falta agregar mas TEST.
 
 
 
-### DETALLES PROPIOS DE LA APP
+## 4 GENERICS && INTERFACES
+![image](https://user-images.githubusercontent.com/86853488/202916786-64c0508d-7477-479e-856b-e268a354534e.png)
+![image](https://user-images.githubusercontent.com/86853488/202916847-3bfcc365-a7f4-42bc-8240-07314bb12048.png)
 
-- Los Tiempos del avion son aleatorios pero relacionados.
-![image](https://user-images.githubusercontent.com/86853488/193730096-460e44ac-84c1-43a2-91f5-90bccf878904.png)
-
-- El codigo de vuelo es en base a la matricula del avion, el año mes dia de salida, la hora, minutos de llegada, destino y origen.
-![image](https://user-images.githubusercontent.com/86853488/193730223-b484e700-f443-451a-93e9-4dd33f8c7284.png)
-
--
+LA CLASE SERIALIZADORAJSON Y XML, IMPLEMENTAN GENERICOS E INTERFACES
+-Queria implementar interfaces con MVP.
 
 
+## 5 SERIALIZACION
+CLASE SERIALIZADORA, SE SERIALIZA EL MAZO, SE CARGA ANTES DE INICIAR LA PARTIDA, Y DESPUES SI QUIERE SE PUEDE GUARDAR
+LA IDEA ES IMPLEMENTAR ALGUNA MODIFICACION DEL MAZO PARA JUSTIFICAR EL GUARDADO, PERO FUNCIONA.
+![image](https://user-images.githubusercontent.com/86853488/202917628-0118e93d-dca4-49b2-a996-36add2962cee.png)
 
-### 11 FUNCIONALIDAD EXTRA _(BETA 1.1 Se lanzara la funcion de Administrador - Usuario, el cual el administrador podra hacer ABM de Aviones, y ABM de vuelos, el usuario quedara limitado a la venta de pasajes, gestion de clientes, etc).-
+## 6 - EVENTOS DELEGADOS
+
+![image](https://user-images.githubusercontent.com/86853488/202920366-36890975-ce08-4afb-8a1d-cdd3d8e011d0.png)
+-ACA SE UTILIZA EVENTOS, EN EL CUAL EL JUGADOR HARA EL INVOKE
+![image](https://user-images.githubusercontent.com/86853488/202920375-044172e9-b7bf-4868-8bcc-9c908d0a9e31.png)
+![image](https://user-images.githubusercontent.com/86853488/202920379-f04c448f-47b0-4dfe-9300-975d510d3043.png)
+![image](https://user-images.githubusercontent.com/86853488/202920420-95f36fc3-a2a1-460b-80be-a74101441caa.png)
+-DONDE CREO LA PARTIDA, ASIGNO AL EVENTO, EL METODO MOSTRARMENSAJE.
+![image](https://user-images.githubusercontent.com/86853488/202920435-104ac98e-195e-4b7d-a1fe-fde43d8b535f.png)
+-Y EL METODO LLAMADA AL DELEGADO.
+![image](https://user-images.githubusercontent.com/86853488/202920453-7501d4b7-37eb-4dab-a8fe-b1fd753e870e.png)
+![image](https://user-images.githubusercontent.com/86853488/202920463-d945fda7-e6ef-4d83-a1f6-d4eb0c2090e6.png)
+![image](https://user-images.githubusercontent.com/86853488/202920470-b0259f5c-1f45-4b66-a8c2-cfc63b46253e.png)
+-ACA ACTUALIZO LA SALA CON UN DELEGADO QUE RECIBE UNA LISTA DE SALAS.
+![image](https://user-images.githubusercontent.com/86853488/202920505-2d08ffd8-e627-4115-9e3a-7789cff78111.png)
+
+![image](https://user-images.githubusercontent.com/86853488/202920496-937f97ee-727a-43ea-927e-8ce5d4a0cf04.png)
 
 
-ABM DESTINOS
-
-### MENU MDI 
-
-![image](https://user-images.githubusercontent.com/86853488/193866380-50476d4e-185f-463b-824b-fabb61f73b1d.png)
-
-
-**SE PODRA REALIZAR ABM**
-
-
-
-![image](https://user-images.githubusercontent.com/86853488/193866612-edad8612-2e01-4b79-a7fd-8c5ac28151b7.png)
-![image](https://user-images.githubusercontent.com/86853488/193866668-004779a4-863c-4481-9281-5ba8ebe42cb6.png)
-![image](https://user-images.githubusercontent.com/86853488/193866715-955dcd29-f351-4641-9c89-6d51455907bf.png)
-
+## 7 EVENTOS
+![image](https://user-images.githubusercontent.com/86853488/202920557-a632a00a-060b-4c97-ac86-1238575f1cf2.png)
+-ESTO TAL VEZ ES LO QUE MAS ME GUSTO, AL METODO LE PUSE ASYNC Y AWAIT, ENTIENDO QUE : YO CORRO LA TAREA DE JUGAR, Y PUEDO CORRER VARIOS HILOS A LA VEZ, SON HILOS SECUNDARIOS, LO QUE SI, VAN A QUEDAR CORRIENDO Y YO ESPERANDO A QUE TERMINE, AWAITANDO...COMO YA NO AWAITO MAS, PREGUNTO SI LA TASK IS COMPLETED, Y CUANDO ME DICE QUE SI GUARDO EN BASE DE DATOS LA PARTIDA.
 
 
 
