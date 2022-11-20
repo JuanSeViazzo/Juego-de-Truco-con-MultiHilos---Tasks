@@ -14,15 +14,14 @@ namespace TrucoConTruco
 
         static Serializadora()
         {
-            ruta = AppDomain.CurrentDomain.BaseDirectory;//Conseguir la ruta desde cualquier PC
-            ruta += @"/Archivos-SerializacionJson"; //Crea una carpeta         }
+            ruta = AppDomain.CurrentDomain.BaseDirectory;
+            ruta += @"/Archivos-SerializacionJson";
         }
             public void EscribirSerializadora(T objeto)
             {
             try
             {
-                //string rutaCompleta = ruta + @"/" + nombreArchivo + $"{DateTime.Now.ToString("dd-MM-yy HH-mm-ss")}.json";
-                string rutaCompleta = ruta + @"/" + DateTime.Now.ToString("dddd-MM-yyyy")  + ".json";
+                string rutaCompleta = ruta + @"/" + DateTime.Now.ToString("dddd-MM-yy")  + ".json";
 
                 if (!Directory.Exists(ruta))
                 {

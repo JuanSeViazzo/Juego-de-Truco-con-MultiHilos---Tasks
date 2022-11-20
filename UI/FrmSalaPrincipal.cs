@@ -137,7 +137,6 @@ namespace UI
             if (mazo is null)
             {
                 lblError.Text = "Falta mazo para jugar Partida";
-                btn_CargarMazo_Click(new object(), null);
             }
             else
             {
@@ -191,12 +190,14 @@ namespace UI
             if (File.Exists(ruta))
             {
                mazo= serializadoraMazoXML.LeerSerializadora(ruta);
-                
+                lblError.Text = "";
+
             }
             else
             {
                 return;
             }
+            lblError.Text = "";
 
         }
 

@@ -25,16 +25,13 @@ namespace TrucoConTruco
 
         public async void CrearPartida(Jugador jugadorUno, Jugador jugadorDos)
         {
-
             jugadorUno.estaJugando = true;
             jugadorDos.estaJugando = true;  
             jugadorUno.MensajeJugador += MostrarPorPantalla;
             jugadorDos.MensajeJugador += MostrarPorPantalla;
 
-            partida = new Partida(jugadorUno, jugadorDos, mazo, MostrarPorPantalla,nombreDeLaSala);
-        
-            Task tarea1 = Task.Run(() => partida.Jugar());
-            
+            partida = new Partida(jugadorUno, jugadorDos, mazo, MostrarPorPantalla,nombreDeLaSala);      
+            Task tarea1 = Task.Run(() => partida.Jugar());         
             await tarea1.ConfigureAwait(true);
 
             if (jugadorUno.puntaje > jugadorDos.puntaje)
@@ -51,8 +48,6 @@ namespace TrucoConTruco
                 }
             
             }
-
-
             if (tarea1.IsCompleted)
             {
                 jugadorUno.estaJugando = false;

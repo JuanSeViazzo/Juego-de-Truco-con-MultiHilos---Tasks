@@ -11,15 +11,19 @@ namespace Test_Unitario
         [TestMethod]
         public void ReparteLasCartasDeFormaCorrecta()
         {
-          //  //GIVEN 
-          //  Mazo mazo;
-          ////  mazo = Administracion.MazoHarcodeado();
-          //  Jugador jugadorUno = new Jugador("JuanSeñorMatador",true);
-          //  Jugador jugadorDos = new Jugador("NachinTruqueroViejo",true);
-          //  //WHEN
-          //  jugadorUno.RepartirCartas(mazo,jugadorUno,jugadorDos);
-          //  //THEN
-          //  Assert.IsTrue(jugadorUno.mano.Count == 3);
+
+            //GIVEN
+            string ruta = "C:\\Users\\juans\\source\\JuanSViazzo2DLabo2-TPTruco\\TrucoConTruco\\UI\\bin\\Debug\\net5.0-windows\\Archivos-Serializacion\\Mazo_Serializado.xml";
+            XmlSerializadora<Mazo> serializadoraMazoXML = new XmlSerializadora<Mazo>();
+            Mazo mazo;
+            mazo = serializadoraMazoXML.LeerSerializadora(ruta);
+
+            Jugador jugadorUno = new Jugador("JuanSeñorMatador", true);
+            Jugador jugadorDos = new Jugador("NachinTruqueroViejo", true);
+            //WHEN
+            jugadorUno.RepartirCartas(mazo, jugadorUno, jugadorDos);
+            //THEN
+            Assert.IsTrue(jugadorUno.mano.Count == 3);
 
         }
 
@@ -27,22 +31,24 @@ namespace Test_Unitario
         public void MezclarLasCartas()
         {
             //given
-           // Mazo mazoMezclado = new Mazo();
-           // Mazo mazoOriginal = Administracion.MazoHarcodeado();
+            string rutaAca = "C:\\Users\\juans\\source\\JuanSViazzo2DLabo2-TPTruco\\TrucoConTruco\\UI\\bin\\Debug\\net5.0-windows\\Archivos-Serializacion\\Mazo_Serializado.xml";
+            XmlSerializadora<Mazo> xmlSerializadora = new XmlSerializadora<Mazo>();
+            Mazo mazoOriginal = xmlSerializadora.LeerSerializadora(rutaAca);
+            Mazo mazoMezclado = new Mazo();
 
-           // //when
-           // mazoMezclado.mazoDeCartas = new List<Carta>(mazoOriginal.mazoDeCartas); 
-           // Jugador jugadorUno = new Jugador("JuanSe",true);
-           // mazoMezclado = jugadorUno.Mezclar(mazoMezclado);
+            //when
+            mazoMezclado.mazoDeCartas = new List<Carta>(mazoOriginal.mazoDeCartas);
+            Jugador jugadorUno = new Jugador("JuanSe", true);
+            mazoMezclado = jugadorUno.Mezclar(mazoMezclado);
 
-           ////then
-           // bool sonIguales = Enumerable.SequenceEqual(mazoMezclado.mazoDeCartas, mazoOriginal.mazoDeCartas);
+            //then
+            bool sonIguales = Enumerable.SequenceEqual(mazoMezclado.mazoDeCartas, mazoOriginal.mazoDeCartas);
 
-           // CollectionAssert.AreEquivalent(mazoOriginal.mazoDeCartas, mazoMezclado.mazoDeCartas);
-            
-           // Assert.IsFalse(sonIguales);
+            CollectionAssert.AreEquivalent(mazoOriginal.mazoDeCartas, mazoMezclado.mazoDeCartas);
 
-            
+            Assert.IsFalse(sonIguales);
+
+
 
         }
     }

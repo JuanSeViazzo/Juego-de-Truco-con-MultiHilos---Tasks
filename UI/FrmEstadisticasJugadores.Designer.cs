@@ -50,6 +50,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(983, 575);
             this.Controls.Add(this.dtgEstadisticas);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmEstadisticasJugadores";
             this.Text = "Estadisticas Jugadores";
             this.Load += new System.EventHandler(this.FrmEstadisticasJugadores_Load);

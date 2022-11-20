@@ -124,6 +124,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "FrmNuevoJugador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNuevoJugador";
             this.ResumeLayout(false);
             this.PerformLayout();

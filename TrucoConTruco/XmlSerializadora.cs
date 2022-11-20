@@ -16,8 +16,8 @@ namespace TrucoConTruco
 
         static XmlSerializadora()
         {
-            ruta = AppDomain.CurrentDomain.BaseDirectory;//Conseguir la ruta desde cualquier PC
-            ruta += @"/Archivos-Serializacion"; //Crea una carpeta 
+            ruta = AppDomain.CurrentDomain.BaseDirectory;
+            ruta += @"/Archivos-Serializacion";
         }
 
 

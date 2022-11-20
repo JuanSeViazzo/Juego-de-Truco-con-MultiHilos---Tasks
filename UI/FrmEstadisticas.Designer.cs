@@ -51,7 +51,8 @@
             this.ClientSize = new System.Drawing.Size(1024, 577);
             this.Controls.Add(this.dtgEstadisticas);
             this.Name = "FrmEstadisticas";
-            this.Text = "Estadisticas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Estadisticas de Partidas";
             this.Load += new System.EventHandler(this.FrmEstadisticas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEstadisticas)).EndInit();
             this.ResumeLayout(false);
